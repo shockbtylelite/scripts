@@ -180,19 +180,19 @@ blueprint_theme_menu() {
 
         case $subchoice in
             1)
-                run_remote_script "https://raw.githubusercontent.com/JishnuTheGamer/Vps/refs/heads/main/cd/Blueprint2.sh"
+                run_remote_script "https://raw.githubusercontent.com/shockbtylelite/scripts/refs/heads/main/print2.sh"
                 ;;
             2)
                 print_header_rule
                 big_header "WELCOME"
                 print_header_rule
-                echo -e "${RED}Running: ${BOLD}Themes + Extensions${NC}"
+                echo -e "${RED}Running: ${BOLD}BluePrint Manager${NC}"
                 print_header_rule
-                print_status "Installing Themes + Extensions"
-                bash <(curl -s https://raw.githubusercontent.com/nobita329/The-Coding-Hub/refs/heads/main/srv/thame/chang.sh)
-                print_success "Themes + Extensions completed successfully"
+                print_status "Opening BluePrint Manager"
+                bash <(curl -s https://raw.githubusercontent.com/shockbtylelite/scripts/refs/heads/main/addon.sh)
+                print_success "success"
                 echo -e ""
-                read -p "$(echo -e "${YELLOW}Press Enter to continue...${NC}")" -n 1
+                read -p "$(echo -e "${YELLOW}Go Home${NC}")" -n 1
                 ;;
             0)
                 return 0
@@ -212,7 +212,7 @@ system_info() {
     print_header_rule
 
     echo -e "${WHITE}╔═══════════════════════════════════════════════╗${NC}"
-    echo -e "${WHITE}║               📊 SYSTEM STATUS               ║${NC}"
+    echo -e "${WHITE}║               📊 SYSTEM FETCH            ║${NC}"
     echo -e "${WHITE}╠═══════════════════════════════════════════════╣${NC}"
     echo -e "${WHITE}║   ${RED}•${NC} ${GREEN}Hostname:${NC} ${WHITE}$(hostname)${NC}                  ${WHITE}║${NC}"
     echo -e "${WHITE}║   ${RED}•${NC} ${GREEN}User:${NC} ${WHITE}$(whoami)${NC}                          ${WHITE}║${NC}"
@@ -231,21 +231,21 @@ system_info() {
 show_menu() {
     clear
     print_header_rule
-    echo -e "${RED}           🚀 JISHNU HOSTING MANAGER            ${NC}"
-    echo -e "${RED}              made by nobita , jishnu           ${NC}"
+    echo -e "${RED}           🚀 Shock Managers 🚀           ${NC}"
+    echo -e "${RED}         Copyed Jishu And Made A Rework 📜${NC}"
     print_header_rule
 
     big_header "MAIN MENU"
     print_header_rule
 
-    echo -e "${WHITE}${BOLD}  1)${NC} ${RED}${BOLD}Panel Installation${NC}"
-    echo -e "${WHITE}${BOLD}  2)${NC} ${RED}${BOLD}Wings Installation${NC}"
-    echo -e "${WHITE}${BOLD}  3)${NC} ${RED}${BOLD}Uninstall Tools${NC}"
-    echo -e "${WHITE}${BOLD}  4)${NC} ${RED}${BOLD}Blueprint+Theme+Extensions${NC}"
-    echo -e "${WHITE}${BOLD}  5)${NC} ${RED}${BOLD}Cloudflare Setup${NC}"
-    echo -e "${WHITE}${BOLD}  6)${NC} ${RED}${BOLD}System Information${NC}"
-    echo -e "${WHITE}${BOLD}  7)${NC} ${RED}${BOLD}Tailscale (install + up)${NC}"
-    echo -e "${WHITE}${BOLD}  8)${NC} ${RED}${BOLD}Database Setup${NC}"
+    echo -e "${WHITE}${BOLD}  1)${NC} ${RED}${BOLD}Pterodactyl Panel Manager${NC}"
+    echo -e "${WHITE}${BOLD}  2)${NC} ${RED}${BOLD}Wings Manager${NC}"
+    echo -e "${WHITE}${BOLD}  3)${NC} ${RED}${BOLD}Uninstaller Manager${NC}"
+    echo -e "${WHITE}${BOLD}  4)${NC} ${RED}${BOLD}BluePrint Manager${NC}"
+    echo -e "${WHITE}${BOLD}  5)${NC} ${RED}${BOLD}Cloudflared Manager${NC}"
+    echo -e "${WHITE}${BOLD}  6)${NC} ${RED}${BOLD}System Fetch${NC}"
+    echo -e "${WHITE}${BOLD}  7)${NC} ${RED}${BOLD}TailScale Manager${NC}"
+    echo -e "${WHITE}${BOLD}  8)${NC} ${RED}${BOLD}Database Manager${NC}"
     echo -e "${WHITE}${BOLD}  0)${NC} ${RED}${BOLD}Exit${NC}"
 
     print_header_rule
@@ -258,15 +258,19 @@ welcome_animation() {
     print_header_rule
     echo -e "${RED}"
 cat <<'EOF'
-       _ _     _                 
-      | (_)   | |                
-      | |_ ___| |__  _ __  _   _ 
-  _   | | / __| '_ \| '_ \| | | |
- | |__| | \__ \ | | | | | | |_| |
-  \____/|_|___/_| |_|_| |_|\__,_|
+  ██████  ██░ ██  ▒█████   ▄████▄   ██ ▄█▀
+▒██    ▒ ▓██░ ██▒▒██▒  ██▒▒██▀ ▀█   ██▄█▒ 
+░ ▓██▄   ▒██▀▀██░▒██░  ██▒▒▓█    ▄ ▓███▄░ 
+  ▒   ██▒░▓█ ░██ ▒██   ██░▒▓▓▄ ▄██▒▓██ █▄ 
+▒██████▒▒░▓█▒░██▓░ ████▓▒░▒ ▓███▀ ░▒██▒ █▄
+▒ ▒▓▒ ▒ ░ ▒ ░░▒░▒░ ▒░▒░▒░ ░ ░▒ ▒  ░▒ ▒▒ ▓▒
+░ ░▒  ░ ░ ▒ ░▒░ ░  ░ ▒ ▒░   ░  ▒   ░ ░▒ ▒░
+░  ░  ░   ░  ░░ ░░ ░ ░ ▒  ░        ░ ░░ ░ 
+      ░   ░  ░  ░    ░ ░  ░ ░      ░  ░   
+                          ░            
 EOF
     echo -e "${NC}"
-    echo -e "${RED}                   Hosting Manager${NC}"
+    echo -e "${RED}                  Shock Hosting manager${NC}"
     print_header_rule
     sleep 1.2
 }
@@ -279,13 +283,13 @@ while true; do
     read -r choice
 
     case $choice in
-        1) run_remote_script "https://raw.githubusercontent.com/JishnuTheGamer/Vps/refs/heads/main/cd/panel2.sh" ;;
-        2) run_remote_script "https://raw.githubusercontent.com/JishnuTheGamer/Vps/refs/heads/main/cd/wing2.sh" ;;
-        3) run_remote_script "https://raw.githubusercontent.com/JishnuTheGamer/Vps/refs/heads/main/cd/uninstall2.sh" ;;
+        1) run_remote_script "https://raw.githubusercontent.com/shockbtylelite/scripts/refs/heads/main/panel.sh" ;;
+        2) run_remote_script "https://raw.githubusercontent.com/shockbtylelite/scripts/refs/heads/main/wings2.sh" ;;
+        3) run_remote_script "https://raw.githubusercontent.com/shockbtylelite/scripts/refs/heads/main/remove2.sh" ;;
         4) blueprint_theme_menu ;;
-        5) run_remote_script "https://raw.githubusercontent.com/JishnuTheGamer/Vps/refs/heads/main/cd/cloudflare.sh" ;;
+        5) run_remote_script "https://raw.githubusercontent.com/shockbtylelite/scripts/refs/heads/main/flare2.sh" ;;
         6) system_info ;;
-        7) run_remote_script "https://raw.githubusercontent.com/nobita329/The-Coding-Hub/refs/heads/main/srv/tools/Tailscale.sh" ;;
+        7) run_remote_script "https://raw.githubusercontent.com/shockbtylelite/scripts/refs/heads/main/tail2.sh" ;;
         8)
             print_header_rule
             big_header "DATABASE SETUP"
@@ -328,7 +332,7 @@ MYSQL_SCRIPT
         0)
             echo -e "${GREEN}Exiting Jishnu Hosting Manager...${NC}"
             print_header_rule
-            echo -e "${RED}           Thank you for using our tools!       ${NC}"
+            echo -e "${RED}           Thank you for using Shock Manager 🚀       ${NC}"
             print_header_rule
             sleep 1
             exit 0
@@ -339,3 +343,4 @@ MYSQL_SCRIPT
             ;;
     esac
 done
+
