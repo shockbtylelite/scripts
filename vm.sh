@@ -35,21 +35,22 @@ ensure_dirs() {
     mkdir -p "$VM_DIR"
 }
 
+# -------- VM FUNCTIONS --------
 list_vms() {
     echo "Existing VMs:"
-    local i=1
-    for f in "$VM_DIR"/*.img 2>/dev/null; do
-        [ -e "$f" ] || continue
-        local name=$(basename "$f" .img)
-        echo " $i) $name"
-        i=$((i+1))
-    done
-    if [ $i -eq 1 ]; then
+    shopt -s nullglob
+    local files=("$VM_DIR"/*.img)
+    if [ ${#files[@]} -eq 0 ]; then
         echo " No VMs found."
+    else
+        local i=1
+        for f in "${files[@]}"; do
+            echo " $i) $(basename "$f" .img)"
+            i=$((i+1))
+        done
     fi
 }
 
-# -------- VM FUNCTIONS --------
 create_vm() {
     read -p "Enter VM name: " vm_name
     local vm_path="$VM_DIR/$vm_name.img"
